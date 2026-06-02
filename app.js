@@ -1,65 +1,65 @@
-const storageKey = "saude-ta-on-prototype-state";
+const storageKey = "saude-ta-on-prototype-state-v2";
 
 const defaultClasses = [
   {
     id: "funcional",
-    name: "Funcional leve",
-    vacancies: 30,
-    schedule: "Segunda e quarta, 8h",
-    location: "Quadra comunitária",
+    name: "Ginástica Funcional",
+    vacancies: 35,
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
     mark: "F",
-    description: "Treino orientado para resistência, equilíbrio e condicionamento.",
+    description: "Aulas de movimento, força e condicionamento para criar rotina de saúde.",
   },
   {
-    id: "alongamento",
-    name: "Alongamento e mobilidade",
-    vacancies: 25,
-    schedule: "Terça e quinta, 9h",
-    location: "Sala multiuso",
+    id: "aerobica",
+    name: "Aeróbica",
+    vacancies: 35,
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
     mark: "A",
-    description: "Aulas de movimento seguro, postura e respiração.",
+    description: "Atividade coletiva com ritmo, energia e foco em disposição no dia a dia.",
   },
   {
-    id: "danca",
-    name: "Dança e ritmo",
+    id: "zumba",
+    name: "Zumba",
     vacancies: 35,
-    schedule: "Sexta, 17h",
-    location: "Pátio principal",
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
-    mark: "D",
-    description: "Atividade coletiva para energia, socialização e autoestima.",
+    mark: "Z",
+    description: "Dança, alegria e socialização em uma modalidade leve de divulgar e aderir.",
   },
   {
-    id: "caminhada",
-    name: "Caminhada orientada",
-    vacancies: 40,
-    schedule: "Sábado, 7h",
-    location: "Praça do bairro",
+    id: "pilates",
+    name: "Pilates",
+    vacancies: 25,
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
-    mark: "C",
-    description: "Grupo acompanhado com controle de presença e ritmo.",
+    mark: "P",
+    description: "Postura, respiração e fortalecimento com cuidado para diferentes públicos.",
   },
   {
-    id: "saude-mental",
-    name: "Roda de cuidado",
-    vacancies: 20,
-    schedule: "Quarta, 15h",
-    location: "Auditório",
+    id: "ritbox",
+    name: "Ritbox",
+    vacancies: 30,
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
     mark: "R",
-    description: "Encontros sobre autocuidado, rotina, escuta e bem-estar.",
+    description: "Treino com música, intensidade e presença para quem gosta de movimento.",
   },
   {
-    id: "avaliacao",
-    name: "Avaliação física",
-    vacancies: 18,
-    schedule: "Por agendamento",
-    location: "Sala de atendimento",
+    id: "circuito",
+    name: "Circuito funcional",
+    vacancies: 30,
+    schedule: "Horário a confirmar",
+    location: "Local a confirmar",
     status: "Aberta",
-    mark: "V",
-    description: "Triagem inicial para orientar a escolha da atividade.",
+    mark: "C",
+    description: "Aulões e circuitos para fortalecer a comunidade e manter a energia do projeto.",
   },
 ];
 
@@ -69,72 +69,66 @@ const defaultStudents = [
     name: "Mariana Costa",
     phone: "(21) 98888-1020",
     birth: "2008-03-11",
-    className: "Dança e ritmo",
+    className: "Zumba",
     status: "Confirmada",
     address: "Rua das Acácias, 120 - Centro",
     guardian: "Luciana Costa",
-    document: "rg-mariana.pdf",
-    notes: "Sem restrições informadas.",
+    message: "Prefere receber confirmação pelo WhatsApp.",
   },
   {
     id: "sto-1002",
     name: "Beatriz Almeida",
     phone: "(21) 97777-4412",
     birth: "1999-08-20",
-    className: "Funcional leve",
+    className: "Ginástica Funcional",
     status: "Nova",
     address: "Av. Brasil, 455 - Vila Nova",
     guardian: "",
-    document: "cpf-beatriz.jpg",
-    notes: "Prefere turma da manhã.",
+    message: "Prefere turma da manhã.",
   },
   {
     id: "sto-1003",
     name: "Carla Menezes",
     phone: "(21) 96666-3001",
     birth: "1987-01-09",
-    className: "Alongamento e mobilidade",
+    className: "Pilates",
     status: "Confirmada",
     address: "Rua Horizonte, 88 - Jardim Azul",
     guardian: "",
-    document: "comprovante-carla.pdf",
-    notes: "Dor no joelho direito.",
+    message: "Quer saber quando abre a agenda oficial.",
   },
   {
     id: "sto-1004",
     name: "Joana Ribeiro",
     phone: "(21) 95555-1190",
     birth: "2012-11-02",
-    className: "Roda de cuidado",
+    className: "Aeróbica",
     status: "Pendente",
     address: "Rua Ipê, 91 - São Bento",
     guardian: "Patrícia Ribeiro",
-    document: "joana-doc.png",
-    notes: "Aguardando autorização do responsável.",
+    message: "Aguardando retorno do responsável.",
   },
   {
     id: "sto-1005",
     name: "Renata Oliveira",
     phone: "(21) 94444-2209",
     birth: "1976-05-14",
-    className: "Caminhada orientada",
+    className: "Circuito funcional",
     status: "Confirmada",
     address: "Rua da Feira, 15 - Bairro Alto",
     guardian: "",
-    document: "renata-rg.pdf",
-    notes: "Levar avaliação médica na primeira semana.",
+    message: "Quer participar dos aulões aos sábados.",
   },
   {
     id: "sto-1006",
     name: "Lívia Martins",
     phone: "(21) 93333-8181",
     birth: "2004-09-27",
-    className: "Avaliação física",
+    className: "Ritbox",
     status: "Nova",
     address: "Estrada Principal, 701 - Campo Verde",
     guardian: "",
-    document: "livia-doc.jpg",
-    notes: "",
+    message: "",
   },
 ];
 
@@ -385,7 +379,6 @@ function renderAll() {
 
 function createStudentFromForm(form) {
   const data = new FormData(form);
-  const documentFile = data.get("document");
   const protocol = `STO-${Date.now().toString().slice(-6)}`;
   return {
     id: protocol.toLowerCase(),
@@ -395,9 +388,9 @@ function createStudentFromForm(form) {
     className: data.get("className"),
     status: "Nova",
     address: data.get("address"),
-    guardian: data.get("guardian") || "",
-    document: documentFile?.name || "Documento não anexado",
-    notes: data.get("notes") || "",
+    guardian: "",
+    document: "-",
+    message: data.get("message") || "",
     protocol,
   };
 }
@@ -419,9 +412,9 @@ function openStudent(student) {
         <dt>Turma</dt><dd>${escapeHtml(student.className)}</dd>
         <dt>Status</dt><dd><span class="status ${student.status.toLowerCase()}">${escapeHtml(student.status)}</span></dd>
         <dt>Endereço</dt><dd>${escapeHtml(student.address)}</dd>
-        <dt>Responsável</dt><dd>${escapeHtml(student.guardian || "-")}</dd>
-        <dt>Documento</dt><dd>${escapeHtml(student.document || "-")}</dd>
-        <dt>Observações</dt><dd>${escapeHtml(student.notes || "-")}</dd>
+        <dt>Responsável</dt><dd>${escapeHtml(student.guardian || "A confirmar, se necessário")}</dd>
+        <dt>Documento</dt><dd>Não solicitado nesta primeira etapa</dd>
+        <dt>Recado</dt><dd>${escapeHtml(student.message || student.notes || "-")}</dd>
       </dl>
       <button class="button button-primary button-full" type="button" data-print-current="${student.id}">Imprimir ficha</button>
     </section>
@@ -471,9 +464,9 @@ function printStudent(student) {
             <dt>Turma</dt><dd>${escapeHtml(student.className)}</dd>
             <dt>Status</dt><dd>${escapeHtml(student.status)}</dd>
             <dt>Endereço</dt><dd>${escapeHtml(student.address)}</dd>
-            <dt>Responsável</dt><dd>${escapeHtml(student.guardian || "-")}</dd>
-            <dt>Documento</dt><dd>${escapeHtml(student.document || "-")}</dd>
-            <dt>Observações</dt><dd>${escapeHtml(student.notes || "-")}</dd>
+            <dt>Responsável</dt><dd>${escapeHtml(student.guardian || "A confirmar, se necessário")}</dd>
+            <dt>Documento</dt><dd>Não solicitado nesta primeira etapa</dd>
+            <dt>Recado</dt><dd>${escapeHtml(student.message || student.notes || "-")}</dd>
           </dl>
         </div>
         <script>window.print(); window.onafterprint = () => window.close();</script>
@@ -493,7 +486,7 @@ function deleteStudent(student) {
 }
 
 function exportCsv() {
-  const header = ["Nome", "Telefone", "Data Nasc.", "Turma", "Status", "Endereço", "Responsável", "Documento"];
+  const header = ["Nome", "Telefone", "Data Nasc.", "Turma", "Status", "Endereço", "Recado"];
   const rows = state.students.map((student) => [
     student.name,
     student.phone,
@@ -501,8 +494,7 @@ function exportCsv() {
     student.className,
     student.status,
     student.address,
-    student.guardian,
-    student.document,
+    student.message || student.notes || "",
   ]);
   const csv = [header, ...rows]
     .map((row) => row.map((cell) => `"${String(cell ?? "").replaceAll('"', '""')}"`).join(";"))
@@ -620,5 +612,11 @@ document.querySelector("[data-create-class]").addEventListener("click", () => {
 
 document.querySelector("[data-export-csv]").addEventListener("click", exportCsv);
 document.querySelector("[data-print-presence]").addEventListener("click", printPresenceList);
+
+if (new URLSearchParams(window.location.search).get("admin") === "fernanda" || window.location.hash === "#admin") {
+  setView("admin");
+} else {
+  setView("public");
+}
 
 renderAll();
