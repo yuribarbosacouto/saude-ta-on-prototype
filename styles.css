@@ -339,6 +339,7 @@ img {
 
 .about-section,
 .activities-section,
+.social-proof-section,
 .contact-section {
   padding: 86px 0;
 }
@@ -377,6 +378,7 @@ img {
 
 .about-grid,
 .activity-grid,
+.proof-grid,
 .contact-grid,
 .class-grid,
 .admin-kpis {
@@ -427,6 +429,44 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.proof-grid article {
+  min-height: 260px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(224, 242, 254, 0.7), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+}
+
+.proof-grid span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 950;
+}
+
+.proof-grid h3 {
+  margin: 24px 0 12px;
+  color: var(--navy);
+  font-size: 1.18rem;
+}
+
+.proof-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
 .activity-card {
   display: grid;
   gap: 18px;
@@ -467,6 +507,16 @@ img {
 
 .activity-meta strong {
   color: var(--navy);
+}
+
+.activity-note {
+  margin: 0;
+  border-radius: 8px;
+  padding: 12px;
+  background: #eff6ff;
+  color: #075985;
+  font-weight: 900;
+  line-height: 1.45;
 }
 
 .capacity {
@@ -1042,6 +1092,7 @@ td {
   .metric-strip,
   .about-grid,
   .activity-grid,
+  .proof-grid,
   .contact-grid,
   .admin-kpis,
   .class-grid {
@@ -1120,6 +1171,7 @@ td {
   .metric-strip,
   .about-grid,
   .activity-grid,
+  .proof-grid,
   .contact-grid,
   .admin-kpis,
   .class-grid,
@@ -1130,6 +1182,7 @@ td {
 
   .about-section,
   .activities-section,
+  .social-proof-section,
   .contact-section,
   .enrollment-section {
     padding: 60px 0;

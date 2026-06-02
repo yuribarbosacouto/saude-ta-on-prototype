@@ -1,12 +1,12 @@
-const storageKey = "saude-ta-on-prototype-state-v2";
+const storageKey = "saude-ta-on-prototype-state-v3";
 
 const defaultClasses = [
   {
     id: "funcional",
     name: "Ginástica Funcional",
     vacancies: 35,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "F",
     description: "Aulas de movimento, força e condicionamento para criar rotina de saúde.",
@@ -15,8 +15,8 @@ const defaultClasses = [
     id: "aerobica",
     name: "Aeróbica",
     vacancies: 35,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "A",
     description: "Atividade coletiva com ritmo, energia e foco em disposição no dia a dia.",
@@ -25,8 +25,8 @@ const defaultClasses = [
     id: "zumba",
     name: "Zumba",
     vacancies: 35,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "Z",
     description: "Dança, alegria e socialização em uma modalidade leve de divulgar e aderir.",
@@ -35,8 +35,8 @@ const defaultClasses = [
     id: "pilates",
     name: "Pilates",
     vacancies: 25,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "P",
     description: "Postura, respiração e fortalecimento com cuidado para diferentes públicos.",
@@ -45,8 +45,8 @@ const defaultClasses = [
     id: "ritbox",
     name: "Ritbox",
     vacancies: 30,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "R",
     description: "Treino com música, intensidade e presença para quem gosta de movimento.",
@@ -55,8 +55,8 @@ const defaultClasses = [
     id: "circuito",
     name: "Circuito funcional",
     vacancies: 30,
-    schedule: "Horário a confirmar",
-    location: "Local a confirmar",
+    schedule: "Agenda divulgada no Instagram",
+    location: "São João de Meriti",
     status: "Aberta",
     mark: "C",
     description: "Aulões e circuitos para fortalecer a comunidade e manter a energia do projeto.",
@@ -221,27 +221,22 @@ function renderActivities() {
 
   grid.innerHTML = state.classes
     .map((item) => {
-      const used = classOccupancy(item.name);
-      const percent = fillPercent(used, item.vacancies);
       return `
         <article class="activity-card">
           <div class="activity-top">
             <span class="activity-mark">${escapeHtml(item.mark)}</span>
-            <span class="status ${item.status === "Aberta" ? "confirmada" : "pendente"}">${escapeHtml(item.status)}</span>
+            <span class="status confirmada">Aula 0800</span>
           </div>
           <div>
             <h3>${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(item.description)}</p>
           </div>
           <div class="activity-meta">
-            <span>Vagas <strong>${used}/${item.vacancies}</strong></span>
-            <span>Horário <strong>${escapeHtml(item.schedule)}</strong></span>
+            <span>Modalidade <strong>gratuita</strong></span>
+            <span>Agenda <strong>Instagram</strong></span>
             <span>Local <strong>${escapeHtml(item.location)}</strong></span>
           </div>
-          <div class="capacity">
-            <div class="capacity-line"><i style="--fill:${percent}%"></i></div>
-            <small>${percent}% de ocupação</small>
-          </div>
+          <p class="activity-note">Faça parte da Família Tá On.</p>
         </article>
       `;
     })
@@ -561,7 +556,7 @@ document.querySelector("[data-enrollment-form]").addEventListener("submit", (eve
   const feedback = document.querySelector("[data-form-feedback]");
   feedback.hidden = false;
   feedback.textContent = `Inscrição enviada com sucesso. Protocolo ${student.protocol}.`;
-  showToast("Nova matrícula entrou no painel da Fernanda.");
+  showToast("Cadastro recebido. A equipe entra em contato pelo WhatsApp.");
 });
 
 document.querySelector("[data-student-search]").addEventListener("input", renderStudents);
