@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Protótipo de alta fidelidade do Saúde Tá On com site público, matrícula online e painel administrativo para gestão."
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Saúde Tá On | Matrícula e Gestão</title>
+    <link rel="preload" href="assets/hero-saude-ta-on.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Saúde Tá On">
+        <img src="assets/logo-saude-ta-on.svg" alt="" />
+        <span>
+          <strong>Saúde Tá On</strong>
+          <small>Projeto comunitário</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#atividades">Atividades</a>
+        <a href="#matricula">Matrícula</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="view-switch" role="tablist" aria-label="Áreas do protótipo">
+        <button class="active" type="button" data-view-button="public">Site dos alunos</button>
+        <button type="button" data-view-button="admin">Painel Fernanda</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="public-view" data-view="public">
+        <section class="hero" id="inicio">
+          <div class="hero-content">
+            <p class="eyebrow">Matrículas abertas</p>
+            <h1>Saúde Tá On</h1>
+            <p>
+              Um projeto de atividades, cuidado e presença para organizar inscrições,
+              turmas e acompanhamento dos alunos com clareza e acolhimento.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#matricula">Inscreva-se</a>
+              <a class="button button-secondary" href="#atividades">Ver atividades</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Prévia visual do projeto">
+            <img src="assets/hero-saude-ta-on.png" alt="Ilustração de atividades e gestão do Saúde Tá On" />
+            <div class="hero-badge">
+              <strong>Ficha online</strong>
+              <span>nome, telefone, endereço e documentos em um só fluxo</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Indicadores do projeto">
+          <article>
+            <strong data-total-alunos-public>0</strong>
+            <span>alunos cadastrados</span>
+          </article>
+          <article>
+            <strong>6</strong>
+            <span>atividades disponíveis</span>
+          </article>
+          <article>
+            <strong data-total-vagas-public>0</strong>
+            <span>vagas planejadas</span>
+          </article>
+          <article>
+            <strong data-ocupacao-public>0%</strong>
+            <span>taxa de ocupação</span>
+          </article>
+        </section>
+
+        <section class="section-shell about-section" id="sobre">
+          <div class="section-heading">
+            <p class="eyebrow">Sobre nós</p>
+            <h2>Um projeto simples para o aluno, organizado para a gestão.</h2>
+          </div>
+
+          <div class="about-grid">
+            <article>
+              <h3>Missão</h3>
+              <p>Facilitar o acesso a atividades de saúde, movimento e convivência, com inscrição rápida e atendimento próximo.</p>
+            </article>
+            <article>
+              <h3>Objetivos</h3>
+              <p>Reduzir processos manuais, centralizar dados e acompanhar a ocupação das turmas em tempo real.</p>
+            </article>
+            <article>
+              <h3>Equipe</h3>
+              <p>Coordenação da Fernanda, apoio administrativo e educadores responsáveis pelas atividades presenciais.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-shell activities-section" id="atividades">
+          <div class="section-heading horizontal">
+            <div>
+              <p class="eyebrow">Cursos e atividades</p>
+              <h2>Cards claros para divulgar no WhatsApp e nas redes.</h2>
+            </div>
+            <p>Vagas, horários e local aparecem antes da matrícula, diminuindo dúvidas e mensagens repetidas.</p>
+          </div>
+          <div class="activity-grid" data-activity-grid></div>
+        </section>
+
+        <section class="enrollment-section" id="matricula">
+          <div class="section-shell enrollment-layout">
+            <div class="enrollment-copy">
+              <p class="eyebrow">Matrícula online</p>
+              <h2>O aluno preenche e a Fernanda recebe no painel.</h2>
+              <p>
+                O protótipo já simula o fluxo pedido no áudio: link de matrícula,
+                dados básicos, turma desejada, documento e confirmação de inscrição.
+              </p>
+              <ul class="check-list">
+                <li>Dados pessoais e contato</li>
+                <li>Endereço e data de nascimento</li>
+                <li>Upload de documento</li>
+                <li>Protocolo de inscrição</li>
+              </ul>
+            </div>
+
+            <form class="enrollment-form" data-enrollment-form>
+              <div class="form-row">
+                <label>
+                  Nome completo
+                  <input name="name" type="text" placeholder="Ex.: Ana Clara Santos" required />
+                </label>
+                <label>
+                  Telefone / WhatsApp
+                  <input name="phone" type="tel" placeholder="(00) 00000-0000" required />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  Data de nascimento
+                  <input name="birth" type="date" required />
+                </label>
+                <label>
+                  Turma desejada
+                  <select name="className" data-class-select required></select>
+                </label>
+              </div>
+              <label>
+                Endereço
+                <input name="address" type="text" placeholder="Rua, número, bairro" required />
+              </label>
+              <div class="form-row">
+                <label>
+                  Documento
+                  <input name="document" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+                </label>
+                <label>
+                  Responsável, se houver
+                  <input name="guardian" type="text" placeholder="Nome do responsável" />
+                </label>
+              </div>
+              <label>
+                Observações de saúde
+                <textarea name="notes" rows="3" placeholder="Alergias, restrições, laudos ou recados importantes"></textarea>
+              </label>
+              <button class="button button-primary button-full" type="submit">Finalizar inscrição</button>
+              <p class="form-feedback" data-form-feedback hidden></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="section-shell contact-section" id="contato">
+          <div class="section-heading">
+            <p class="eyebrow">Contato</p>
+            <h2>Atendimento direto para tirar dúvidas e confirmar informações.</h2>
+          </div>
+          <div class="contact-grid">
+            <article>
+              <strong>WhatsApp</strong>
+              <span>(21) 99999-0000</span>
+            </article>
+            <article>
+              <strong>E-mail</strong>
+              <span>contato@saudetaon.org</span>
+            </article>
+            <article>
+              <strong>Instagram</strong>
+              <span>@saudetaon</span>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="admin-view" data-view="admin" hidden>
+        <div class="admin-shell">
+          <aside class="admin-sidebar">
+            <img src="assets/logo-saude-ta-on.svg" alt="Saúde Tá On" />
+            <nav aria-label="Menu administrativo">
+              <a href="#dashboard">Dashboard</a>
+              <a href="#alunos">Alunos</a>
+              <a href="#turmas">Turmas</a>
+              <a href="#relatorios">Relatórios</a>
+              <a href="#configuracoes">Configurações</a>
+            </nav>
+          </aside>
+
+          <div class="admin-main">
+            <section class="admin-hero" id="dashboard">
+              <div>
+                <p class="eyebrow">Painel administrativo</p>
+                <h2>Olá, Fernanda. Suas matrículas estão organizadas.</h2>
+                <p>Visão rápida de inscrições, turmas, ocupação e pendências do projeto Saúde Tá On.</p>
+              </div>
+              <img src="assets/admin-preview.png" alt="Prévia visual do painel administrativo" />
+            </section>
+
+            <section class="admin-kpis" aria-label="Indicadores administrativos">
+              <article>
+                <span>Total de alunos</span>
+                <strong data-total-alunos>0</strong>
+              </article>
+              <article>
+                <span>Novas inscrições</span>
+                <strong data-novas-inscricoes>0</strong>
+              </article>
+              <article>
+                <span>Turmas ativas</span>
+                <strong data-turmas-ativas>0</strong>
+              </article>
+              <article>
+                <span>Taxa de ocupação</span>
+                <strong data-taxa-ocupacao>0%</strong>
+              </article>
+            </section>
+
+            <section class="admin-card" id="alunos">
+              <div class="admin-section-head">
+                <div>
+                  <p class="eyebrow">Gestão de alunos</p>
+                  <h3>Lista de matrículas</h3>
+                </div>
+                <div class="table-tools">
+                  <input type="search" data-student-search placeholder="Buscar aluno, telefone ou turma" />
+                  <button class="button button-secondary" type="button" data-export-csv>Exportar Excel</button>
+                </div>
+              </div>
+
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Telefone</th>
+                      <th>Data Nasc.</th>
+                      <th>Turma</th>
+                      <th>Status</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody data-student-table></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="admin-card" id="turmas">
+              <div class="admin-section-head">
+                <div>
+                  <p class="eyebrow">Gestão de turmas</p>
+                  <h3>Vagas, horários e inscrições</h3>
+                </div>
+                <button class="button button-primary" type="button" data-create-class>Criar turma</button>
+              </div>
+              <div class="class-grid" data-class-admin-grid></div>
+            </section>
+
+            <section class="reports-grid" id="relatorios">
+              <article class="admin-card">
+                <p class="eyebrow">Relatórios</p>
+                <h3>Alunos por turma</h3>
+                <div class="bar-report" data-class-report></div>
+              </article>
+              <article class="admin-card">
+                <p class="eyebrow">Faixa etária</p>
+                <h3>Distribuição dos alunos</h3>
+                <div class="age-report" data-age-report></div>
+                <button class="button button-secondary button-full" type="button" data-print-presence>Imprimir lista de presença</button>
+              </article>
+            </section>
+
+            <section class="admin-card settings-card" id="configuracoes">
+              <div>
+                <p class="eyebrow">Configurações</p>
+                <h3>Informações da instituição</h3>
+                <p>Campos demonstrativos para mostrar onde entrariam logo, usuários administradores e dados oficiais.</p>
+              </div>
+              <div class="settings-grid">
+                <label>
+                  Nome da instituição
+                  <input type="text" value="Projeto Saúde Tá On" />
+                </label>
+                <label>
+                  Responsável
+                  <input type="text" value="Fernanda" />
+                </label>
+                <label>
+                  E-mail de atendimento
+                  <input type="email" value="contato@saudetaon.org" />
+                </label>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="student-dialog" data-student-dialog>
+      <form method="dialog">
+        <button class="dialog-close" value="close" aria-label="Fechar">×</button>
+      </form>
+      <div data-student-detail></div>
+    </dialog>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/logo-saude-ta-on.svg" alt="" />
+        <span>
+          <strong>Saúde Tá On</strong>
+          <small>#semprepresente</small>
+        </span>
+      </div>
+      <p>Protótipo de alta fidelidade para validação com a Fernanda.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
