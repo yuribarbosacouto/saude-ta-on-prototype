@@ -1,6 +1,12 @@
 # Saúde Tá On
 
+![CI](https://github.com/yuribarbosacouto/saude-ta-on-prototype/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/yuribarbosacouto/saude-ta-on-prototype/actions/workflows/codeql.yml/badge.svg)
+[![Demo](https://img.shields.io/badge/demo-online-2ea44f)](https://yuribarbosacouto.github.io/saude-ta-on-prototype/)
+
 Protótipo de alta fidelidade para validação do site público e do fluxo inicial de matrícula do projeto **Saúde Tá On**.
+
+[Demo online](https://yuribarbosacouto.github.io/saude-ta-on-prototype/) · [Repositório](https://github.com/yuribarbosacouto/saude-ta-on-prototype)
 
 ## O que entrega
 
@@ -29,6 +35,13 @@ http://127.0.0.1:4180/?admin=fernanda
 ```
 
 Em produção real, essa área precisa de login, banco de dados e regras de privacidade.
+
+## Qualidade
+
+- CI valida referências locais de assets, scripts e folhas de estilo.
+- CodeQL roda análise estática do JavaScript.
+- Os campos vindos do formulário são escapados antes de aparecerem em tabelas, detalhes e impressão.
+- O painel administrativo é demonstrativo e usa `localStorage`, sem backend ou autenticação real.
 
 ## Contatos usados no protótipo
 

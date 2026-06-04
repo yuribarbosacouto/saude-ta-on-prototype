@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate local asset references
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          root = Path(".")
+          html_path = root / "index.html"
+          missing = []
+
+          class AssetParser(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  for key in ("src", "href"):
+                      value = attrs.get(key)
+                      if not value:
+                          continue
+                      if value.startswith(("#", "http://", "https://", "mailto:", "tel:")):
+                          continue
+                      if "://" in value:
+                          continue
+                      local = value.split("#", 1)[0].split("?", 1)[0]
+                      if local and not (root / local).exists():
+                          missing.append(local)
+
+          AssetParser().feed(html_path.read_text(encoding="utf-8"))
+          if missing:
+              print("Missing local assets:")
+              for item in sorted(set(missing)):
+                  print(f"- {item}")
+              raise SystemExit(1)
+          print("All local asset references exist.")
+          PY
+
+      - name: Check required files
+        run: test -f index.html && test -f styles.css && test -f app.js && test -f README.md
