@@ -43,6 +43,12 @@ Em produção real, essa área precisa de login, banco de dados e regras de priv
 - Os campos vindos do formulário são escapados antes de aparecerem em tabelas, detalhes e impressão.
 - O painel administrativo é demonstrativo e usa `localStorage`, sem backend ou autenticação real.
 
+## Governanca
+
+- Guia de contribuicao: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Politica de seguranca: [SECURITY.md](SECURITY.md)
+- Templates de issue e pull request em [`.github`](.github)
+
 ## Contatos usados no protótipo
 
 - Instagram oficial: `https://www.instagram.com/projetosaudetaon/`

@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible problem in the Saúde Tá On prototype.
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken or confusing?
+      placeholder: The enrollment form...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use fake demo data only.
+      placeholder: |
+        1. Open the public site
+        2. Submit a fake enrollment
+        3. Open ?admin=fernanda
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Public site
+        - Enrollment form
+        - Admin dashboard
+        - CSV export
+        - Print view
+        - Privacy
+        - Documentation
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, console errors, or links.
